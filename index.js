@@ -98,7 +98,7 @@ const game = {
 		for (let i = 0; i < block.length; i++) {
 			const row = block[i];
 			for (let j = 0; j < row.length; j++) {
-				if (row[j] === 'x') {
+				if (row[j] !== 'o') {
 					area[y + i][x + j] = block[i][j];
 				}
 			}
@@ -112,7 +112,7 @@ const game = {
 				if (tetromino[i][j] === 'o') continue
 				if (!this.area[y + i] ||
 					!this.area[y + i][x + j] ||
-					this.area[y + i][x + j] === 'x') {
+					this.area[y + i][x + j] !== 'o') {
 					return false
 				}
 
@@ -126,8 +126,8 @@ const game = {
 		for (let i = 0; i < tetromino.length; i++) {
 			const row = tetromino[i];
 			for (let j = 0; j < row.length; j++) {
-				if (row[j] === 'x') {
-					tetromino[i][j] = this.area[y + i][x + j];
+				if (row[j] !== 'o') {
+					this.area[y + i][x + j] = tetromino[i][j];
 				}
 			}
 		}
@@ -151,7 +151,7 @@ const showArea = (area) => {
 		const line = area[y];
 		for (let x = 0; x < line.length; x++) {
 			const block = line[x];
-			if (block === 'x') {
+			if (block !== 'o') {
 				context.fillStyle = 'olive';
 				context.strokeStyle = 'denim';
 				context.fillRect(x * SIZE_BLOCK, y * SIZE_BLOCK, SIZE_BLOCK, SIZE_BLOCK);
