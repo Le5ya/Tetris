@@ -10,7 +10,7 @@ h1 span {
 
 body {
 	font-family: sans-serif;
-	background-color: #ccc;
+	background-color: #a1a1a1;
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 }
 
 .game-area {
-	border: solid blue;
-	border-width: 0 2px 3px 2px;
+	border: solid rgb(54, 54, 190);
+	border-width: 0 4px 6px 4px;
 	display: block;
 }
