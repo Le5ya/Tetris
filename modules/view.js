@@ -28,7 +28,6 @@ export class View {
 	}
 
 	init() {
-		console.log(preview);
 		this.canvas.classList.add('game-area');
 		this.container.append(this.canvas);
 		this.canvas.width = SIZE_BLOCK * COLUMNS;
