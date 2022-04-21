@@ -25,9 +25,13 @@ export class View {
 		previewText.textContent = "Press ENTER for beging"
 		this.container.append(preview);
 		preview.append(previewText);
+
+
 	}
 
 	init() {
+
+		this.container.innerHTML = '';
 		this.canvas.classList.add('game-area');
 		this.container.append(this.canvas);
 		this.canvas.width = SIZE_BLOCK * COLUMNS;
